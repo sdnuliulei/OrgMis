@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "web\web.csproj", "{2C89AABA-2D1F-4E1F-A67F-9323CACE7E20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ray.Plat.Common", "Ray.Plat.Common\Ray.Plat.Common.csproj", "{0937EBB5-962B-4BA1-9079-8B5F0A748900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ray.Plat.Controls", "Ray.Plat.Controls\Ray.Plat.Controls.csproj", "{95BCC89F-C3E9-435F-9B7D-50B86224C865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{2C89AABA-2D1F-4E1F-A67F-9323CACE7E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C89AABA-2D1F-4E1F-A67F-9323CACE7E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C89AABA-2D1F-4E1F-A67F-9323CACE7E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0937EBB5-962B-4BA1-9079-8B5F0A748900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0937EBB5-962B-4BA1-9079-8B5F0A748900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0937EBB5-962B-4BA1-9079-8B5F0A748900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0937EBB5-962B-4BA1-9079-8B5F0A748900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95BCC89F-C3E9-435F-9B7D-50B86224C865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BCC89F-C3E9-435F-9B7D-50B86224C865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BCC89F-C3E9-435F-9B7D-50B86224C865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BCC89F-C3E9-435F-9B7D-50B86224C865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
