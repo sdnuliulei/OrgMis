@@ -5,29 +5,49 @@
 		<title>@ViewBag.Title</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- basic styles -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link href=@Url.Content("~/assets/css/bootstrap.min.css") rel="stylesheet" />
+		<link rel="stylesheet" href=@Url.Content("~/assets/css/font-awesome.min.css") />
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href=@Url.Content("~/assets/css/font-awesome-ie7.min.css") />
 		<![endif]-->
 		<!-- page specific plugin styles -->
 		<!-- fonts -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 		<!-- ace styles -->
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href=@Url.Content("~/assets/css/ace.min.css") />
+		<link rel="stylesheet" href=@Url.Content("~/assets/css/ace-rtl.min.css") />
+		<link rel="stylesheet" href=@Url.Content("~/assets/css/ace-skins.min.css") />
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href=@Url.Content("~/assets/css/ace-ie.min.css") />
 		<![endif]-->
 		<!-- inline styles related to this page -->
 		<!-- ace settings handler -->
-		<script src="assets/js/ace-extra.min.js"></script>
+		<script src=@Url.Content("~/assets/js/ace-extra.min.js")></script>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+		<script src=@Url.Content("~/assets/js/html5shiv.js")></script>
+		<script src=@Url.Content("~/assets/js/respond.min.js")></script>
 		<![endif]-->
+
+        <!--[if !IE]> -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<!-- <![endif]-->
+		<!--[if IE]>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<![endif]-->
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+		    window.jQuery || document.write("<script src='/assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+		</script>
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+		    if ("ontouchend" in document) document.write("<script src='/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+		</script>
 </head>
 <body>
     	<div class="navbar navbar-default" id="navbar">
@@ -40,42 +60,12 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							后台管理系统
+							CNKI机构统计数据管理系统
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->
 
-				<div class="navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
-								<span class="user-info">
-									<small>欢迎光临,</small>
-									Jason
-								</span>
-
-								<i class="icon-caret-down"></i>
-							</a>
-							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="icon-user"></i>
-										个人资料
-									</a>
-								</li>
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
-										<i class="icon-off"></i>
-										退出
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul><!-- /.ace-nav -->
-				</div><!-- /.navbar-header -->
+                @Html.Partial("LoginPartial")
 			</div><!-- /.container -->
 		</div>
 
@@ -125,6 +115,69 @@
 								</li>
 							</ul>
 						</li>
+                        <li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-asterisk"></i>
+								<span class="menu-text"> 内容管理 </span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										栏目管理
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										文章管理
+									</a>
+								</li>
+							</ul>
+						</li>
+                        <li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-asterisk"></i>
+								<span class="menu-text"> 业务管理 </span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										报告管理
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										数据管理
+									</a>
+								</li>
+							</ul>
+						</li>
+                        <li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-asterisk"></i>
+								<span class="menu-text"> 个人管理 </span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+							<ul class="submenu">
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										自定义数据
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-double-angle-right"></i>
+										数据报告
+									</a>
+								</li>
+							</ul>
+						</li>
 					</ul><!-- /.nav-list -->
 					<div class="sidebar-collapse" id="sidebar-collapse">
 						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
@@ -144,37 +197,16 @@
 					</div>
 				</div><!-- /.main-content -->
 			</div><!-- /.main-container-inner -->
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="icon-double-angle-up icon-only bigger-110"></i>
-			</a>
 		</div><!-- /.main-container -->
 
         <!-- basic scripts -->
-		<!--[if !IE]> -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<!-- <![endif]-->
-		<!--[if IE]>
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<![endif]-->
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-		    window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
-		</script>
-		<!-- <![endif]-->
-		<!--[if IE]>
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-		</script>
-		<![endif]-->
-		<script type="text/javascript">
-		    if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/typeahead-bs2.min.js"></script>
+		<script src=@Url.Content("~/assets/js/bootstrap.min.js")></script>
+		<script src=@Url.Content("~/assets/js/typeahead-bs2.min.js")></script>
 		<!-- page specific plugin scripts -->
 		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
-		<!-- inline scripts related to this page -->
+		<script src=@Url.Content("~/assets/js/ace-elements.min.js")></script>
+		<script src=@Url.Content("~/assets/js/ace.min.js")></script>
+		<!-- inline scripts related to this page -->
+
 </body>
 </html>

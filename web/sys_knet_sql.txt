@@ -1,0 +1,5 @@
+﻿time:2015-03-09 15:09:15
+conn:server=127.0.0.1;uid=sa;database=OM
+text:INSERT INTO [OM_RightType] ([RTypeName]) VALUES (@RTypeName);SELECT SCOPE_IDENTITY();
+	@RTypeName	操作权限
+
