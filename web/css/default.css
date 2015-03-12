@@ -1,0 +1,86 @@
+﻿*{font-size:12px; font-family:Tahoma,Verdana,微软雅黑,新宋体}
+body {height: 100%;width: 100%;margin:0}
+a{ color:Black; text-decoration:none;}
+a:hover{ color:Red; text-decoration:underline;}
+.textbox03 {border: #878787 1px solid;padding: 4px 3px;font:Verdana, Geneva, sans-serif,宋体;line-height: 14px; background-color: #fff;  height: auto; font-size: 14px;  font-weight: bold; width: 190px; }
+
+.txt01{font:Verdana, Geneva, sans-serif,宋体;padding:3px 2px 2px 2px; border-width:1px; border-color:#ddd;  color:#000;}
+.txt {border: #878787 1px solid;padding: 4px 3px;font:Verdana, Geneva, sans-serif,宋体;line-height: 14px; background-color: #fff;  height: auto; font-size: 14px;}
+.footer{background:#f1f1f1; height:40px; width:100%; text-align:center; line-height:40px;border-top:1px #ccc solid;bottom:5px;position:absolute}
+
+.head a{color:White;text-decoration:underline;}
+
+.navlist{list-style-type:none;margin:0px; padding:10px;}
+.navlist li{ padding:0px;}
+.navlist li a{line-height:24px;}
+.navlist li div{margin:2px 0px;padding-left:10px;padding-top:2px; border:1px dashed #ffffff;}
+.navlist li div.hover{border:1px dashed #99BBE8; background:#E0ECFF;cursor:pointer;}
+.navlist li div.hover a{color:#416AA3;}
+.navlist li div.selected{border:1px solid #99BBE8; background:#E0ECFF;cursor:default;}
+.navlist li div.selected a{color:#416AA3; font-weight:bold;}
+
+
+.third_ul{ list-style-type:none;margin:0px; padding:0px; display:none;}
+.third_ul li{ padding-left:20px;}
+
+.icon{ background:url(../images/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
+.icon-sys{ background-position:0px -200px;}
+.icon-set{ background-position:-380px -200px;}
+.icon-demo{ background-position:-260px -200px;}
+.icon-nav{background-position: -100px -20px; }
+.icon-users{background-position: -100px -480px;}
+.icon-role{background-position: -360px -200px;}
+.icon-set{background-position: -380px -200px;}
+.icon-log{background-position: -380px -80px;}
+
+.icon-delete{ background-position:-140px -120px;}
+.icon-magic{ background-position:0px -500px;}
+.icon-database{ background-position:-20px -140px;}
+.icon-settings{background:url(Images/icons.png) no-repeat 0px -107px;height:16px;padding-left:18px;}
+.icon-arrow{ background:url('../images/arrow.gif') no-repeat right;}
+
+.icon-art_type{ background-position:-320px -60px;}
+.icon-art_cont{ background-position:-320px -80px;}
+.icon-rpt_res{ background-position:-180px -280px;}
+.icon-rpt{ background-position:-200px -280px;}
+.icon-index_1{ background-position:-120px -500px}
+.icon-index_2{ background-position:-140px -500px}
+.icon-index_3{ background-position:-160px -500px}
+.icon-index_4{ background-position:-180px -500px}
+.icon-index_5{ background-position:-200px -500px}
+.icon-index_6{ background-position:-220px -500px}
+.icon-spe-1{ background-position:-60px -240px}
+.icon-spe-2{ background-position:-80px -240px}
+.icon-spe-3{ background-position:-100px -240px}
+.icon-spe-4{ background-position:-120px -240px}
+
+.icon-per_1{ background-position:-80px -20px}
+.icon-per_2{ background-position:-100px -20px}
+.icon-per_3{ background-position:-120px -20px}
+.icon-per_4{ background-position:-140px -20px}
+.icon-per_5{ background-position:-160px -20px}
+.icon-per_6{ background-position:-180px -20px}
+.icon-per_7{ background-position:-200px -20px}
+.icon-per_8{ background-position:-220px -20px}
+.icon-log{ background-position:-220px -320px}
+
+.define-head{font-family: Verdana,Geneva,sans-serif; background-color:#EFEFEF;height:55px; overflow:hidden; background:url('Images/head_bg.gif');}
+.define-head .define-logo{ height:52px;  width:50%;float:left;background:url('Images/Logo.png') 10px 7px no-repeat}
+.define-head .define-logo #LoginTopLine{ letter-spacing:2px; margin:8px 0px 0px 10px; text-shadow:3px 1px 6px #fff;color:#15428B; font-size:26px; height:30px; line-height:30px; padding-left:55px;}
+.define-head .define-logo #LoginBotoomLine{letter-spacing:1px;text-shadow:3px 1px 6px #fff;color:#15428B; font-size:12px; height:15px; line-height:15px;padding-left:65px;}
+.define-head .define-account{height:50px; width:50%; margin-top:20px; margin-left:700px; text-align:right;color:#fff; line-height:20px; padding-top:10px;}
+.define-head .define-account a{color:#fff}
+.define-head .define-account a:hover{ color:#FF0;}
+.define-head .define-account span{ padding-left:20px; background:url('Images/icon/memeber.gif') left center no-repeat; }
+.define-head .define-account span b{ font-weight:normal; color:#FF0; }
+#LoginTb{font-size: 14px;}
+#LoginTb{font-size: 12px;}
+#LoginTb input{width: 190px;height: 24px;line-height: 24px;}
+.register{ margin-left:500px}
+#regTb input{width:300px;height;20px,line-height:24px;}
+
+.fm{margin:0;padding:10px 30px;}
+.ftitle{font-size:14px;font-weight:bold;padding:5px 0;margin-bottom:10px;border-bottom:1px solid #ccc;}
+.fitem{margin-bottom:5px;}
+.fitem label{display:inline-block;width:80px;}
+.fitem input{width:160px;}
