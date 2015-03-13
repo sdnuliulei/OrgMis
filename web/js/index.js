@@ -10,7 +10,7 @@ $(function(){
 	tabClose();
 	tabCloseEven();
 
-/* 选择TAB时刷新内容
+/* 选择TAB时刷新内容*/
 	$('#tabs').tabs({
         onSelect: function (title) {
             var currTab = $('#tabs').tabs('getTab', title);
@@ -22,7 +22,7 @@ $(function(){
 
         }
     });
-*/
+
 })
 
 //初始化左侧
@@ -261,12 +261,6 @@ var _menus = {
                 "menuname": "系统管理",
                 "menus": [
                     {
-                        "menuid": "11",
-                        "menuname": "模块管理",
-                        "icon": "",
-                        "url": "#"
-                    },
-                    {
                         "menuid": "12",
                         "menuname": "权限管理",
                         "icon": "",
@@ -275,6 +269,12 @@ var _menus = {
                     {
                         "menuid": "13",
                         "menuname": "角色管理",
+                        "icon": "",
+                        "url": "#"
+                    },
+                    {
+                        "menuid": "11",
+                        "menuname": "机构管理",
                         "icon": "",
                         "url": "#"
                     },

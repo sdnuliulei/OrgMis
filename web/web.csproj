@@ -560,8 +560,8 @@
     <Content Include="images\tabicons.png" />
     <Content Include="images\TableDrawTable.png" />
     <Content Include="images\tools-sprites-trans.gif" />
-    <Content Include="index.html" />
     <Content Include="js\easyloader.js" />
+    <Content Include="js\handlebars.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery.easyui.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -609,7 +609,7 @@
     <Content Include="js\plugins\jquery.treegrid.js" />
     <Content Include="js\plugins\jquery.validatebox.js" />
     <Content Include="js\plugins\jquery.window.js" />
-    <Content Include="login.html" />
+    <Content Include="js\viewjs\rights.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -633,6 +633,16 @@
     <Content Include="Views\Rights\Index.cshtml" />
     <Content Include="Views\Shared\Content_Layout.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ray.Plat.Common\Ray.Plat.Common.csproj">
+      <Project>{0937EBB5-962B-4BA1-9079-8B5F0A748900}</Project>
+      <Name>Ray.Plat.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ray.Plat.Controls\Ray.Plat.Controls.csproj">
+      <Project>{95BCC89F-C3E9-435F-9B7D-50B86224C865}</Project>
+      <Name>Ray.Plat.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
+using KNet.Data.Entity;
 
 namespace web.Controllers
 {
     public class RightsController : Controller
     {
-        //
-        // GET: /Rights/
+        DataContext context = new DataContext("OM");
 
         public ActionResult Index()
         {
@@ -17,32 +18,35 @@ namespace web.Controllers
         }
 
         //
-        // GET: /Rights/Details/5
-
-        public ActionResult Details(int id)
+        // GET: /Rights/
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page">页数</param>
+        /// <param name="rows">当前页记录数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Index(int page,int rows)
         {
-            return View();
+            int start = (page - 1) * rows;
+            int length = rows;
+            int count=0;
+            Expression<Func<Models.OM_Right, bool>> order = null;//构造排序
+            order = c => c.RID.Asc();
+            IList<Models.OM_Right> OM_Rights = context.Gets<Models.OM_Right>(null, start, length, out count,order);
+            return Json(new { total = count, rows = OM_Rights });
         }
-
-        //
-        // GET: /Rights/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        } 
 
         //
         // POST: /Rights/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Models.OM_Right OM_Right)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                context.Insert<Models.OM_Right>(OM_Right);
+                return Json(new { errorMsg = false });//解决返回值关闭弹出窗口的问题
             }
             catch
             {
@@ -53,22 +57,24 @@ namespace web.Controllers
         //
         // GET: /Rights/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int RID)
         {
-            return View();
+            Expression<Func<Models.OM_Right,bool>>match=c=>c.RID==RID;
+            Models.OM_Right OM_Right = context.Get<Models.OM_Right>(match);
+            return Json(OM_Right);
         }
 
         //
         // POST: /Rights/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int RID,Models.OM_Right OM_Right)
         {
             try
             {
                 // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
+                context.Update<Models.OM_Right>(OM_Right);
+                return Json(new { errorMsg = false });
             }
             catch
             {
@@ -78,28 +84,14 @@ namespace web.Controllers
 
         //
         // GET: /Rights/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Rights/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int RID)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Expression<Func<Models.OM_Right, bool>> match = c => c.RID == RID;
+            Models.OM_Right OM_Right = context.Get<Models.OM_Right>(match);
+            bool result = context.Delete<Models.OM_Right>(OM_Right);
+            return Json(new { success = result });
         }
     }
 }

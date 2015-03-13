@@ -1,15 +1,30 @@
 ﻿var url;
 function newUser() {
-    $('#dlg').dialog('open').dialog('setTitle', 'New User');
-    $('#fm').form('clear');
-    url = 'save_user.php';
+    $('#dlg').dialog('open').dialog('setTitle', '新建权限');
+    $('.fm').form('clear');
+    url = "/Rights/Create";
+    $.post("/RightTypes/Index", null, function (data) {
+        $("#RTID").html("");
+        $.each(data, function (k, v) {
+            $("#RTID").append("<option value=\"" + v.RTID + "\">" + v.RTypeName + "</option>");
+        });
+    }, "json");
 }
 function editUser() {
+    $.post("/RightTypes/Index", null, function (data) {
+        $("#RTID").html("");
+        $.each(data, function (k, v) {
+            $("#RTID").append("<option value=\"" + v.RTID + "\">" + v.RTypeName + "</option>");
+        });
+    }, "json");
     var row = $('#dg').datagrid('getSelected');
     if (row) {
-        $('#dlg').dialog('open').dialog('setTitle', 'Edit User');
+        $('#dlg').dialog('open').dialog('setTitle', '编辑权限');
         $('#fm').form('load', row);
-        url = 'update_user.php?id=' + row.id;
+        url = '/Rights/Edit?RID=' + row.RID;
+        $.get(url, null, function (data) { 
+        
+        });
     }
 }
 function saveUser() {
@@ -35,9 +50,9 @@ function saveUser() {
 function destroyUser() {
     var row = $('#dg').datagrid('getSelected');
     if (row) {
-        $.messager.confirm('Confirm', 'Are you sure you want to destroy this user?', function (r) {
+        $.messager.confirm('Confirm', '是否删除该权限?', function (r) {
             if (r) {
-                $.post('destroy_user.php', { id: row.id }, function (result) {
+                $.post('/Rights/Delete', { RID: row.RID }, function (result) {
                     if (result.success) {
                         $('#dg').datagrid('reload');    // reload the user data
                     } else {
@@ -49,5 +64,27 @@ function destroyUser() {
                 }, 'json');
             }
         });
+    }
+}
+
+//页面加载
+$(document).ready(function () {
+
+});
+var operation = {
+    init: function () {
+
+    }, //初始化
+    addRight: function () {
+
+    },
+    editRight: function () {
+
+    },
+    delRights: function () {
+
+    },
+    loadRightTypes: function () { 
+    
     }
 }

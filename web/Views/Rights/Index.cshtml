@@ -9,15 +9,15 @@
         </div>
 		<div data-options="region:'center',title:'权限管理'">
             <table id="dg" class="easyui-datagrid" style="width:100%;margin:0px"
-                    url="get_users.php"
+                    url="@Url.Action("Index",new {page=1,rows=10})"
                     toolbar="#toolbar" pagination="true"
                     rownumbers="true" fitColumns="true" singleSelect="true">
                 <thead>
                     <tr>
-                        <th field="firstname" width="50">权限名称</th>
-                        <th field="lastname" width="50">Last Name</th>
-                        <th field="phone" width="50">Phone</th>
-                        <th field="email" width="50">Email</th>
+                        <th field="ck" checkbox="true"></th>
+                        <th field="RID" hidden="true">编号</th>
+                        <th field="RightName" width="50">权限名称</th>
+                        <th field="UniqueFlag" width="50">标识</th>
                     </tr>
                 </thead>
             </table>
@@ -34,8 +34,17 @@
         <div class="ftitle">权限管理</div>
         <form id="fm" class="fm" method="post" novalidate>
             <div class="fitem">
+                <label>权限类别:</label>
+                <select id="RTID" name="RTID">
+                </select>
+            </div>
+            <div class="fitem">
                 <label>权限名称:</label>
-                <input name="firstname" class="easyui-textbox" required="true">
+                <input name="RightName" class="easyui-textbox" required="true">
+            </div>
+            <div class="fitem">
+                <label>标识:</label>
+                <input name="UniqueFlag" class="easyui-textbox" required="true">
             </div>
         </form>
     </div>
@@ -43,59 +52,6 @@
         <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:95px">Save</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
     </div>
-    <script type="text/javascript">
-        var url;
-        function newUser() {
-            $('#dlg').dialog('open').dialog('setTitle', 'New User');
-            $('#fm').form('clear');
-            url = 'save_user.php';
-        }
-        function editUser() {
-            var row = $('#dg').datagrid('getSelected');
-            if (row) {
-                $('#dlg').dialog('open').dialog('setTitle', 'Edit User');
-                $('#fm').form('load', row);
-                url = 'update_user.php?id=' + row.id;
-            }
-        }
-        function saveUser() {
-            $('#fm').form('submit', {
-                url: url,
-                onSubmit: function () {
-                    return $(this).form('validate');
-                },
-                success: function (result) {
-                    var result = eval('(' + result + ')');
-                    if (result.errorMsg) {
-                        $.messager.show({
-                            title: 'Error',
-                            msg: result.errorMsg
-                        });
-                    } else {
-                        $('#dlg').dialog('close');        // close the dialog
-                        $('#dg').datagrid('reload');    // reload the user data
-                    }
-                }
-            });
-        }
-        function destroyUser() {
-            var row = $('#dg').datagrid('getSelected');
-            if (row) {
-                $.messager.confirm('Confirm', 'Are you sure you want to destroy this user?', function (r) {
-                    if (r) {
-                        $.post('destroy_user.php', { id: row.id }, function (result) {
-                            if (result.success) {
-                                $('#dg').datagrid('reload');    // reload the user data
-                            } else {
-                                $.messager.show({    // show error message
-                                    title: 'Error',
-                                    msg: result.errorMsg
-                                });
-                            }
-                        }, 'json');
-                    }
-                });
-            }
-        }
-    </script>
+    <script type="text/javascript" src="/js/viewjs/rights.js"></script>
+
 
