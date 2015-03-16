@@ -26,14 +26,19 @@ namespace web.Controllers
         /// <param name="rows">当前页记录数</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Index(int page,int rows)
+        public ActionResult Index(int page,int rows,int RTID)
         {
             int start = (page - 1) * rows;
             int length = rows;
             int count=0;
-            Expression<Func<Models.OM_Right, bool>> order = null;//构造排序
+            Expression<Func<Models.OM_Right, bool>> match = null;//构造match
+            if (RTID != 0)
+            {
+                match = c => c.RTID == RTID;
+            }
+            Expression<Func<Models.OM_Right, bool>> order = null;//构造order
             order = c => c.RID.Asc();
-            IList<Models.OM_Right> OM_Rights = context.Gets<Models.OM_Right>(null, start, length, out count,order);
+            IList<Models.OM_Right> OM_Rights = context.Gets<Models.OM_Right>(match, start, length, out count,order);
             return Json(new { total = count, rows = OM_Rights });
         }
 
@@ -61,7 +66,7 @@ namespace web.Controllers
         {
             Expression<Func<Models.OM_Right,bool>>match=c=>c.RID==RID;
             Models.OM_Right OM_Right = context.Get<Models.OM_Right>(match);
-            return Json(OM_Right);
+            return Json(OM_Right,JsonRequestBehavior.AllowGet);
         }
 
         //
