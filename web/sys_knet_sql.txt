@@ -1849,3 +1849,123 @@ time:2015-03-13 14:44:19
 conn:server=127.0.0.1;uid=sa;database=OM
 text:SELECT COUNT(*) FROM [OM_Right]
 
+time:2015-03-13 15:05:25
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:05:25
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-13 15:06:02
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:06:02
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-13 15:06:58
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:06:58
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-13 15:15:54
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 20 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:15:54
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-13 15:16:27
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 512 [RTID],[RTypeName] FROM [OM_RightType]
+
+time:2015-03-13 15:16:27
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] WHERE ([RID] = @p0)
+	@p0	14
+
+time:2015-03-13 15:16:30
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 512 [RTID],[RTypeName] FROM [OM_RightType]
+
+time:2015-03-13 15:16:30
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] WHERE ([RID] = @p0)
+	@p0	4
+
+time:2015-03-13 15:36:54
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 512 [RTID],[RTypeName] FROM [OM_RightType]
+
+time:2015-03-13 15:36:54
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] WHERE ([RID] = @p0)
+	@p0	3
+
+time:2015-03-13 15:37:00
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 512 [RTID],[RTypeName] FROM [OM_RightType]
+
+time:2015-03-13 15:37:00
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] WHERE ([RID] = @p0)
+	@p0	3
+
+time:2015-03-13 15:58:28
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 20 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:58:28
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-13 15:58:29
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 20 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-13 15:58:29
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-16 09:37:35
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-16 09:37:35
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-16 09:37:40
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 20 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-16 09:37:40
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-16 09:37:41
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-16 09:37:41
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-16 09:37:43
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 10 [RID],[RightName],[UniqueFlag],[RTID] FROM [OM_Right] ORDER BY [RID] ASC
+
+time:2015-03-16 09:37:43
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT COUNT(*) FROM [OM_Right]
+
+time:2015-03-16 09:37:49
+conn:server=127.0.0.1;uid=sa;database=OM
+text:SELECT TOP 512 [RTID],[RTypeName] FROM [OM_RightType]
+
