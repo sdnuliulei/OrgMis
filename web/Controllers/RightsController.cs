@@ -24,6 +24,7 @@ namespace web.Controllers
         /// </summary>
         /// <param name="page">页数</param>
         /// <param name="rows">当前页记录数</param>
+        /// <param name="RTID">所属权限类型</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult Index(int page,int rows,int RTID)

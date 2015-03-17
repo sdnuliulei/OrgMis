@@ -270,7 +270,7 @@ var _menus = {
                         "menuid": "13",
                         "menuname": "角色管理",
                         "icon": "",
-                        "url": "#"
+                        "url": "/Roles/Index"
                     },
                     {
                         "menuid": "11",
