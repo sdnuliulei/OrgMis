@@ -38,6 +38,9 @@ var operation = {
                 $('#fm').form('load', data);
             });
         }
+        else {
+            $.messager.alert("请选择一项编辑!");
+        }
     },
     saveRight: function () {
         $('#fm').form('submit', {

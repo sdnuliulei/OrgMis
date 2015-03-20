@@ -44,11 +44,11 @@
             </div>
             <div class="fitem">
                 <label>权限名称:</label>
-                <input name="RightName" class="easyui-textbox" required="true">
+                @Html.TextBox("RightName", "", new { type="text",required=true,@class="easyui-textbox"})
             </div>
             <div class="fitem">
                 <label>标识:</label>
-                <input name="UniqueFlag" class="easyui-textbox" required="true">
+                @Html.TextBox("UniqueFlag","",new {type="text",required=true,@class="easyui-textbox"})
             </div>
         </form>
     </div>

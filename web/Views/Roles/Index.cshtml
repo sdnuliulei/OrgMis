@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/Content_Layout.cshtml";
 }
 <table id="dg" class="easyui-datagrid" style="width:100%;margin:0px"
-                    url="/Roles/Index?page=1&rows=10"
+                    url="@Url.Action("Index", new { page=1,rows=10})"
                     toolbar="#toolbar" pagination="true"
                     rownumbers="true" fitColumns="true" singleSelect="true">
     <thead>

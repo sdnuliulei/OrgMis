@@ -21,6 +21,8 @@ namespace web.Controllers
             return View();
         }
 
+        //加载角色列表
+        //POST:/Roles/Index
         [HttpPost]
         public ActionResult Index(int page,int rows)
         {
@@ -34,9 +36,8 @@ namespace web.Controllers
             return Json(new { total = count, rows = OM_Roles });
         }
 
-        //
+        //添加新角色
         // POST: /Roles/Create
-
         [HttpPost]
         public ActionResult Create(OM_Role OM_Role)
         {
@@ -44,64 +45,41 @@ namespace web.Controllers
             {
                 // TODO: Add insert logic here
                 bool result = context.Insert<OM_Role>(OM_Role);
-                return RedirectToAction("Index");
+                return Json(new { errorMsg=false});
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return Json(new { errorMsg = ex.Message });
             }
         }
         
-        //
-        // GET: /Roles/Edit/5
- 
-        public ActionResult Edit(int RoleID)
-        {
-            return View();
-        }
 
-        //
+        //编辑角色名称
         // POST: /Roles/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, OM_Role OM_Role)
+        public ActionResult Edit(int RoleID,OM_Role OM_Role)
         {
             try
             {
                 // TODO: Add update logic here
                 bool result = context.Update<OM_Role>(OM_Role);
-                return RedirectToAction("Index");
+                return Json(new { errorMsg = false });
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return Json(new { errorMsg = ex.Message });
             }
         }
 
-        //
+        //删除角色，注意与权限的关联性
         // GET: /Roles/Delete/5
- 
-        public ActionResult Delete(int RID)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Roles/Delete/5
-
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int RoleID)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Expression<Func<OM_Role, bool>> match = c => c.RoleID == RoleID;
+            OM_Role OM_Role = context.Get<OM_Role>(match);
+            bool result = context.Delete<OM_Role>(OM_Role);
+            return Json(new { success = result });
         }
     }
 }

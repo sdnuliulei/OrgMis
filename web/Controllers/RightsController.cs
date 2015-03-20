@@ -99,5 +99,10 @@ namespace web.Controllers
             bool result = context.Delete<Models.OM_Right>(OM_Right);
             return Json(new { success = result });
         }
+
+        protected override void HandleUnknownAction(string actionName)
+        {
+            base.HandleUnknownAction(actionName);
+        }
     }
 }
