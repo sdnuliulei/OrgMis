@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Content_Layout.cshtml";
+}
+	<div class="easyui-layout" style="width:100%;height:100%;">
+		<div data-options="region:'west',split:true" title="部门名称" style="width:150px;">
+             <div style="padding:0px;background:#EFEFEF;width:auto;margin:0 0 0 0;height:30px">
+             </div>
+             <div>
+                <ul id="content">
+                 </ul>
+             </div>
+        </div>
+		<div data-options="region:'center',title:'用户管理'">
+            <table id="dg" class="easyui-datagrid" style="width:100%;margin:0px"
+                    url="@Url.Action("Index", new { page=1,rows=10,Org_id=""})"
+                    toolbar="#toolbar" pagination="true"
+                    rownumbers="true" fitColumns="true" singleSelect="true">
+                <thead>
+                    <tr>
+                        <th field="ck" checkbox="true"></th>
+                        <th field="UserID" hidden="true">编号</th>
+                        <th field="UserName" width="50">用户名</th>
+                        <th field="Email" width="50">Email</th>
+                        <th field="Status" width="50">状态</th>
+                        <th field="CreateTime" width="50">创建时间</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="toolbar">
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" id="add_">新建</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" id="edit_">编辑</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" id="delete_">删除</a>
+            </div>
+		</div>
+	</div>
+    
+    <div id="dlg" class="easyui-dialog" style="width:400px;height:350px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">用户管理</div>
+        <form id="fm" class="fm" method="post" novalidate>
+            <div class="fitem">
+                <label>用户名:</label>
+                @Html.TextBox("UserName", "", new { required = true, @class = "easyui-textbox", validType = "isUserSingle[5]" })
+            </div>
+            <div class="fitem">
+                <label>密码:</label>
+                @Html.Password("Password","",new {required=true,@class="easyui-textbox"})
+            </div>
+            <div class="fitem">
+                <label>真实姓名:</label>
+                @Html.TextBox("RealName", "", new { @class="easyui-textbox"})
+            </div>
+            <div class="fitem">
+                <label>所在部门:</label>
+                @Html.TextBox("Org_id", "")
+            </div>
+            <div class="fitem">
+                <label>所属角色：</label>
+                <select id="RoleID" name="RoleID"></select>
+            </div>
+            <div class="fitem">
+                <label>Email:</label>
+                @Html.TextBox("Email", "", new { @class="easyui-textbox",validType="email"})
+            </div>
+            <div class="fitem">
+                <label>手机:</label>
+                @Html.TextBox("Phone", "", new { @class="easyui-textbox"})
+            </div>
+            <div class="fitem">
+                <label>用户状态:</label>
+            </div>
+        </form>
+    </div>
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" id="btn_Confirm_" style="width:95px">确定</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+    </div>
+    
+    <script src="/Areas/Admin/Scripts/viewjs/users.js" type="text/javascript"></script>

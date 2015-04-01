@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace Ray.Plat.Controls
 {
@@ -38,10 +39,12 @@ namespace Ray.Plat.Controls
 
     public class EncodeTree
     {
-        public static List<TreeNode> initTree(List<zTreeNode> nodes)
+
+        public static List<TreeNode> initTree(IList<zTreeNode> nodes,string rootId)
         {
             List<TreeNode> rootNode = new List<TreeNode>();
-            foreach (zTreeNode node in nodes)
+            var tmpNodes = nodes.Where(c => c.id == rootId).ToList();
+            foreach (zTreeNode node in tmpNodes)
             {
                 TreeNode treeNode = new TreeNode();
                 treeNode.id = node.id;
@@ -55,7 +58,7 @@ namespace Ray.Plat.Controls
             return rootNode;
         }
 
-        private static List<TreeNode> CreateChildTree(List<zTreeNode> nodes, TreeNode treeNode)
+        private static List<TreeNode> CreateChildTree(IList<zTreeNode> nodes, TreeNode treeNode)
         {
             string keyid = treeNode.id;                                        //根节点ID
             List<TreeNode> nodeList = new List<TreeNode>();
@@ -80,7 +83,7 @@ namespace Ray.Plat.Controls
         }
 
 
-        private static Dictionary<string, string> CreateUrl(List<zTreeNode> nodes, TreeNode jt)    //把Url属性添加到attribute中，如果需要别的属性，也可以在这里添加
+        private static Dictionary<string, string> CreateUrl(IList<zTreeNode> nodes, TreeNode jt)    //把Url属性添加到attribute中，如果需要别的属性，也可以在这里添加
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
             return dic;

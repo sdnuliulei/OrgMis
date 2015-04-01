@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Content_Layout.cshtml";
+}
+
+<div class="easyui-panel" style="height:80%">
+    <div class="self_toolbar">
+        <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add'" id="add_">新建</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'" id="edit_">编辑</a>
+        <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'" id="del_">删除</a>
+    </div>
+    <div class="easyui-panel" style="height:80%;border:0">
+        <ul id="content">
+        </ul>
+    </div>
+</div>
+
+<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+        closed="true" buttons="#dlg-buttons">
+    <div class="ftitle">部门管理</div>
+    <form id="fm" class="fm" method="post" novalidate>
+            @Html.Hidden("Org_id","")
+            @Html.Hidden("Org_pId","")
+        <div class="fitem">
+            <label>部门名称:</label>
+            @Html.TextBox("Org_name", "", new { type="text",required=true,@class="easyui-textbox"})
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" id="btn_Confirm_" style="width:95px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+</div>
+<script src="/Areas/Admin/Scripts/viewjs/orgs.js" type="text/javascript"></script>
+
+
